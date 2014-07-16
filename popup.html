@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRAPfy</title>
+    <style>
+      body { background-color: #222; }
+      #logo { height: 30px; }
+      #content {
+        padding: 10px;
+        border-top: 1px solid rgba(0,0,0,.5);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+        -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+      }
+      .lang-selector {
+        display: block;
+        width: 100%;
+        height: 38px;
+        padding: 10px 27px;
+        font-size: 16px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+      }
+
+      .btn-create {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #f85d5d;
+        border-color: #de5454;
+        color: #fff;
+        display: block;
+        font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        margin: 20px auto;
+        outline: none;
+        padding: 10px 27px;
+        text-decoration: none;
+        text-align: center;
+        width: 200px;
+      }
+
+      .btn-create:hover {
+        color: #fff;
+        background-color: #df5252;
+        border-color: #ca4848;
+      }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <img src="img/logo-50.png" id="logo">
+    <div id="content">
+      <select id="lang" class="lang-selector">
+        <option value="plain_text:txt:Plain Text">Plain Text</option>
+        <option value="sh:sh:Bash">Bash (shell)</option>
+        <option value="c_cpp:cpp:C++">C++</option>
+        <option value="coffee:coffee:Coffee">Coffee</option>
+        <option value="csharp:cs:C#">C#</option>
+        <option value="css:css:CSS">CSS</option>
+        <option value="golang:go:GO">GO</option>
+        <option value="html:html:HTML">HTML</option>
+        <option value="javascript:js:JavaScript">JavaScript</option>
+        <option value="json:json:JSON">JSON</option>
+        <option value="perl:perl:Perl">Perl</option>
+        <option value="php:php:PHP">PHP</option>
+        <option value="python:py:Python">Python</option>
+        <option value="ruby:rb:Ruby">Ruby</option>
+        <option value="sql:sql:SQL">SQL</option>
+        <option value="stylus:stl:Stylus">Stylus</option>
+        <option value="xml:xml:XML">XML</option>
+        <option value="yaml:yaml:YAML">YAML</option>
+      </select>
+      <a href="#" class="btn-create">Create Room</a>
+    </div>
+  </body>
+</html>
