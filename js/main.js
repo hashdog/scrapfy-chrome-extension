@@ -1,8 +1,11 @@
 $(document).on('ready', function() {
-  $('a.btn-create').on('click', function(e) {
+  $('#create-btn').on('click', function(e) {
     e.preventDefault();
 
-    var lang = $('#lang').val();
+    $('#loading-text').show();
+    $('#create-text').hide();
+
+    var lang = $('#lang-selector').val();
     $.post('http://api.scrapfy.io/scraps', {lang: lang}, function(data) {
       chrome.tabs.create({url: data.url});
     });

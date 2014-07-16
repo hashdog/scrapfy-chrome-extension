@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCRAPfy</title>
     <style>
-      body { background-color: #222; }
+      body {
+        background-color: #222;
+        width: 230px;
+      }
       #logo { height: 30px; }
       #content {
         padding: 10px;
@@ -16,10 +19,9 @@
       }
       .lang-selector {
         display: block;
-        width: 100%;
-        height: 38px;
-        padding: 10px 27px;
+        padding: 7px 27px;
         font-size: 16px;
+        height: 38px;
         line-height: 1.42857143;
         color: #555;
         background-color: #fff;
@@ -27,6 +29,7 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         outline: none;
+        width: 100%;
       }
 
       .btn-create {
@@ -39,12 +42,11 @@
         display: block;
         font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
         font-size: 16px;
-        margin: 20px auto;
+        margin: 10px auto 5px auto;
         outline: none;
         padding: 10px 27px;
         text-decoration: none;
         text-align: center;
-        width: 200px;
       }
 
       .btn-create:hover {
@@ -52,6 +54,7 @@
         background-color: #df5252;
         border-color: #ca4848;
       }
+      #loading-text { display: none; }
     </style>
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
@@ -59,7 +62,7 @@
   <body>
     <img src="img/logo-50.png" id="logo">
     <div id="content">
-      <select id="lang" class="lang-selector">
+      <select id="lang-selector" class="lang-selector">
         <option value="plain_text:txt:Plain Text">Plain Text</option>
         <option value="sh:sh:Bash">Bash (shell)</option>
         <option value="c_cpp:cpp:C++">C++</option>
@@ -79,7 +82,10 @@
         <option value="xml:xml:XML">XML</option>
         <option value="yaml:yaml:YAML">YAML</option>
       </select>
-      <a href="#" class="btn-create">Create Room</a>
+      <a href="#" id="create-btn" class="btn-create">
+        <span id="loading-text"><img src="img/loading.gif"> Loading...</span>
+        <span id="create-text">Create Room</span>
+      </a>
     </div>
   </body>
 </html>
