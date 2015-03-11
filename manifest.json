@@ -15,5 +15,14 @@
   "icons": {
     "22": "img/icon.png",
     "128": "img/icon-128.png"
-  }
+  },
+
+  "default_locale": "en",
+
+  "offline_enabled": false,
+
+  "permissions": [ "*://*/*", "contextMenus" ],
+  "background": {
+      "scripts": [ "js/jquery.min.js", "js/background.js" ]
+   }
 }
