@@ -1,3 +1,5 @@
+/* global document, $, chrome */
+
 $(document).on('ready', function() {
   var lastLang = localStorage.getItem('lastLang');
 
