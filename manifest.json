@@ -10,7 +10,8 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "clipboardWrite"
   ],
   "icons": {
     "22": "img/icon.png",
