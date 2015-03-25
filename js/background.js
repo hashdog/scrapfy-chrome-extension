@@ -27,7 +27,7 @@
       'content': contentToSend
     })
     .done(function(reponseData) {
-      if(!reponseData.url) {
+      if( ! reponseData.url) {
         alert('SCRAPfy error: bad response format by the server');
         return false;
       }
@@ -43,7 +43,6 @@
     .fail(function() {
       alert('SCRAPfy error: seems the server is unreachable for the moment');
     });
-
   }
 
   function createSelectionContextMenu() {
@@ -56,19 +55,16 @@
         // Get the selection with getSelection() coz info.selectionText
         // strip the \n, \t...
         chrome.tabs.executeScript( {
-
           code: 'window.getSelection().toString();'
-
         }, function(obj) {
 
           // Should never happen. So just in case of...
-          if(!obj[0] || ''===obj[0]) {
-              alert('No selection');
-              return false;
+          if( ! obj[0] || '' === obj[0]) {
+            alert('No selection');
+            return false;
           }
 
           createSCRAPfyRoom(obj[0]);
-
         });
       }
     });

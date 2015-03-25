@@ -22,9 +22,9 @@ $(document).on('ready', function() {
     }
 
     // Get the SCRAP data and open the new tab
-    $.post('http://api.scrapfy.io/scraps', {lang: lang})
+    $.post('http://api.scrapfy.io/scraps', { lang: lang })
       .done(function(data) {
-        chrome.tabs.create({url: data.url});
+        chrome.tabs.create({ url: data.url });
       });
   });
 });
