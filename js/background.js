@@ -3,6 +3,20 @@
 (function() {
 
   /**
+   * Copy the given string to the clipboard
+   */
+  function copyTextToClipboard(text) {
+    var tmpCopyDom = $('<textarea/>');
+    tmpCopyDom.text(text);
+    $('body').append(tmpCopyDom);
+
+    tmpCopyDom.select();
+    document.execCommand('copy', true);
+
+    tmpCopyDom.remove();
+  }
+
+  /**
    * Create a SCRAPfy room with content
    * @param string contentToSend
    */
@@ -17,6 +31,9 @@
         alert('SCRAPfy error: bad response format by the server');
         return false;
       }
+
+      // Copy the link into clipboard
+      copyTextToClipboard(reponseData.url);
 
       // Open the room in new tab
       chrome.tabs.create({
