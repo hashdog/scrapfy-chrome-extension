@@ -1,11 +1,9 @@
 /* global chrome, alert, $ */
 
-(function() {
+(function () {
 
-  /**
-   * Copy the given string to the clipboard
-   */
-  function copyTextToClipboard(text) {
+  // Copy the given string to the clipboard
+  function copyTextToClipboard (text) {
     var tmpCopyDom = $('<textarea/>');
     tmpCopyDom.text(text);
     $('body').append(tmpCopyDom);
@@ -20,13 +18,11 @@
    * Create a SCRAPfy room with content
    * @param string contentToSend
    */
-  function createSCRAPfyRoom(contentToSend) {
-    var remoteUrl = chrome.i18n.getMessage('url_create');
-
-    $.post(remoteUrl, {
+  function createSCRAPfyRoom (contentToSend) {
+    $.post('https://api.scrapfy.io/scraps', {
       'content': contentToSend
     })
-    .done(function(reponseData) {
+    .done(function (reponseData) {
       if( ! reponseData.url) {
         alert('SCRAPfy error: bad response format by the server');
         return false;
@@ -40,26 +36,26 @@
         url: reponseData.url
       });
     })
-    .fail(function() {
+    .fail(function () {
       alert('SCRAPfy error: seems the server is unreachable for the moment');
     });
   }
 
-  function createSelectionContextMenu() {
+  function createSelectionContextMenu () {
     chrome.contextMenus.create({
       type: 'normal',
       title: 'Open in SCRAPfy',
       contexts: ['selection'],
-      onclick: function() {
+      onclick: function () {
 
         // Get the selection with getSelection() coz info.selectionText
         // strip the \n, \t...
         chrome.tabs.executeScript( {
           code: 'window.getSelection().toString();'
-        }, function(obj) {
+        }, function (obj) {
 
           // Should never happen. So just in case of...
-          if( ! obj[0] || '' === obj[0]) {
+          if ( ! obj[0] || '' === obj[0]) {
             alert('No selection');
             return false;
           }

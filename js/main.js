@@ -1,6 +1,6 @@
 /* global document, $, chrome */
 
-$(document).on('ready', function() {
+$(document).on('ready', function () {
   var lastLang = localStorage.getItem('lastLang');
 
   // Set the last lang selected
@@ -8,7 +8,7 @@ $(document).on('ready', function() {
     $('#lang-selector').val(lastLang);
   }
 
-  $('#create-btn').on('click', function(e) {
+  $('#create-btn').on('click', function (e) {
     e.preventDefault();
 
     // Show loading spinner
@@ -22,9 +22,13 @@ $(document).on('ready', function() {
     }
 
     // Get the SCRAP data and open the new tab
-    $.post('http://api.scrapfy.io/scraps', { lang: lang })
-      .done(function(data) {
-        chrome.tabs.create({ url: data.url });
+    $.post('https://api.scrapfy.io/scraps', {
+      lang: lang
+    })
+    .done(function (data) {
+      chrome.tabs.create({
+        url: data.url
       });
+    });
   });
 });
