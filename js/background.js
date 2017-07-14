@@ -19,11 +19,15 @@
    * @param string contentToSend
    */
   function createSCRAPfyRoom (contentToSend) {
-    $.post('https://api.scrapfy.io/scraps', {
-      'content': contentToSend
+    $.ajax({
+      type: 'POST',
+      url: 'https://api.scrapfy.io/scraps',
+      contentType: 'application/json',
+      data: JSON.stringify({ content: contentToSend }),
+      dataType: 'json'
     })
     .done(function (reponseData) {
-      if( ! reponseData.url) {
+      if(!reponseData.url) {
         alert('SCRAPfy error: bad response format by the server');
         return false;
       }

@@ -22,8 +22,12 @@ $(document).on('ready', function () {
     }
 
     // Get the SCRAP data and open the new tab
-    $.post('https://api.scrapfy.io/scraps', {
-      lang: lang
+    $.ajax({
+      type: 'POST',
+      url: 'https://api.scrapfy.io/scraps',
+      contentType: 'application/json',
+      data: JSON.stringify({lang: lang}),
+      dataType: 'json'
     })
     .done(function (data) {
       chrome.tabs.create({
