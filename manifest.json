@@ -1,5 +1,6 @@
 {
-  "name": "SCRAPfy: A collaborative code editor for ninjas",
+  "name": "SCRAPfy: Collaborative code editor for ninjas",
+  "short_name": "SCRAPfy",
   "description": "Share your code in real-time with other developers.",
   "version": "0.2.1",
   "manifest_version": 2,
