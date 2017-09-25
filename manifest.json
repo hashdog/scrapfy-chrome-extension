@@ -1,9 +1,9 @@
 {
-  "name": "SCRAPfy: A collaborative code editor for ninjas.",
+  "name": "SCRAPfy: A collaborative code editor for ninjas",
+  "description": "Share your code in real-time with other developers.",
   "version": "0.2.1",
   "manifest_version": 2,
   "author": "hashdog",
-  "description": "A collaborative code editor for ninjas.",
   "homepage_url": "https://scrapfy.io",
   "icons": {
     "22": "img/icon.png",
