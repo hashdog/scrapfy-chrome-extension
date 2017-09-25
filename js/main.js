@@ -26,7 +26,7 @@ $(document).on('ready', function () {
       type: 'POST',
       url: 'https://api.scrapfy.io/scraps',
       contentType: 'application/json',
-      data: JSON.stringify({lang: lang}),
+      data: JSON.stringify({ lang: lang }),
       dataType: 'json'
     })
     .done(function (data) {

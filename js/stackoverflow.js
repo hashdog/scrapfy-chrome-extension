@@ -16,7 +16,7 @@
       var content = '';
 
       if ($code.length > 0) {
-        content = $code.text()
+        content = $code.text();
       } else {
         var $parent = $this.parent();
         $parent.find('a.scrapfy-link').remove();
